@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class classb;
+
+class classa {
+private:
+    int a;
+public:
+    classa() : a(10) {}
+    friend class classb;
+};
+
+class classb {
+public:
+    void showclassa(classa& ob) {
+        cout << "The value of a from classa: " << ob.a << endl;
+    }
+};
+
+int main() {
+    classa obja;
+    classb objb;
+
+    objb.showclassa(obja);
+    return 0;
+}
+
